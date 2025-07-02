@@ -19,10 +19,10 @@ module tt_um_asiclab_example (
   // All output pins must be assigned. If not used, assign to 0.
   wire reset = ~rst_n;
   assign uio_out = 0;
-  assign uio_oe  = 0;
+  assign uio_oe = 0;
 
   // List all unused inputs to prevent warnings
-    wire _unused = &{ena, uio_in, 1'b0};
+    wire _unuse = &{ena,uio_in,1'b0};
     always @(posedge clk or posedge reset) begin
         if (reset) begin
             uo_out <= 0;
@@ -31,5 +31,4 @@ module tt_um_asiclab_example (
             uo_out[7:4] <= 0;
         end
     end
-
 endmodule
